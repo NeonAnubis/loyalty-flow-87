@@ -117,11 +117,16 @@ export function AppSidebar() {
                 </SidebarMenuItem>
                 <SidebarMenuItem>
                   <SidebarMenuButton asChild>
-                    <button className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground w-full">
+                    <NavLink 
+                      to="/notifications" 
+                      className={({ isActive }) => 
+                        `flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors w-full ${getNavCls({ isActive })}`
+                      }
+                    >
                       <Bell className="h-4 w-4" />
                       <span>Notifications</span>
                       <span className="ml-auto bg-primary text-primary-foreground text-xs rounded-full px-2 py-0.5">3</span>
-                    </button>
+                    </NavLink>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               </SidebarMenu>
